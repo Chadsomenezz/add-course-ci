@@ -14,7 +14,7 @@ class Main extends CI_Controller{
 	public function process_form(){
 		$this->load->helper('url');
 		if(!$this->input->post('name')){
-			redirect('main');
+			redirect(base_url());
 			die();
 		}
 
@@ -24,7 +24,7 @@ class Main extends CI_Controller{
 		);
 
 		$this->form_process->process_form($data);
-		redirect('main');
+		redirect(base_url());
 	}
 
 	public function remove_course($id=false){
@@ -34,7 +34,7 @@ class Main extends CI_Controller{
 			die();
 		}
 		$this->form_process->remove_form($id);
-		redirect('main');
+		redirect(base_url());
 
 	}
 
